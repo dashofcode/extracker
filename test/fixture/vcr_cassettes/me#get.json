@@ -1,0 +1,39 @@
+[
+  {
+    "request": {
+      "body": "\"\"",
+      "headers": {
+        "User-agent": "extracker",
+        "X-TrackerToken": "d55c3bc1f74346b843ca84ba340b29bf"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://www.pivotaltracker.com/services/v5/me"
+    },
+    "response": {
+      "body": "{\"kind\":\"me\",\"id\":1266314,\"name\":\"Tracker API User1\",\"initials\":\"TU1\",\"username\":\"trackerapi1\",\"time_zone\":{\"kind\":\"time_zone\",\"olson_name\":\"America/Los_Angeles\",\"offset\":\"-08:00\"},\"api_token\":\"d55c3bc1f74346b843ca84ba340b29bf\",\"has_google_identity\":false,\"projects\":[{\"kind\":\"membership_summary\",\"id\":4001820,\"project_id\":1027488,\"project_name\":\"My Sample Project\",\"project_color\":\"555555\",\"role\":\"owner\",\"last_viewed_at\":\"2015-12-17T22:13:15Z\"}],\"email\":\"forestcarlisle+trackerapi1@gmail.com\",\"receives_in_app_notifications\":true,\"created_at\":\"2014-03-02T07:09:48Z\",\"updated_at\":\"2016-01-27T23:31:08Z\"}",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Status": "200 OK",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "Date": "Wed, 27 Jan 2016 23:31:08 GMT",
+        "X-Request-Id": "223ecd55de747e14d6c1200b669dfcb1",
+        "X-UA-Compatible": "IE=Edge,chrome=1",
+        "ETag": "\"dae35195f7ac87803c97d56a8b86dd1f\"",
+        "X-Runtime": "0.044877",
+        "X-Rack-Cache": "miss",
+        "X-Powered-By": "Phusion Passenger Enterprise",
+        "Server": "nginx + Phusion Passenger",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": "false",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers": "X-TrackerToken,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Tracker-Warn-Unless-Project-Version-Is",
+        "X-Tracker-Client-Pinger-Interval": "12"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

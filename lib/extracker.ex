@@ -42,7 +42,7 @@ defmodule ExTracker do
   end
 
   def json_request(method, url, body \\ "", headers \\ [], options \\ []) do
-    request!(method, url, Encoder.encode(body), headers, options) |> process_response
+    request!(method, url, Encoder.encode(body, []), headers, options) |> process_response
   end
 
   def raw_request(method, url, body \\ "", headers \\ [], options \\ []) do
