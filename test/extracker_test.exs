@@ -5,10 +5,10 @@ defmodule ExTrackerTest do
   doctest ExTracker
 
   setup_all do
-    :meck.new(Poison.Parser, [:no_link])
+    :meck.new(ExTracker.JSON, [:no_link])
 
     on_exit fn ->
-      :meck.unload(Poison.Parser)
+      :meck.unload(ExTracker.JSON)
     end
   end
 
@@ -17,19 +17,19 @@ defmodule ExTrackerTest do
   end
 
   test "process response on a 200 response" do
-    :meck.expect(Poison.Parser, :parse!, 1, :decoded_json)
+    :meck.expect(ExTracker.JSON, :decode!, 1, :decoded_json)
     assert process_response(%HTTPoison.Response{ status_code: 200,
                                                  headers: %{},
                                                  body: "json" }) == :decoded_json
-    assert :meck.validate(Poison.Parser)
+    assert :meck.validate(ExTracker.JSON)
   end
 
   test "process response on a non-200 response" do
-    :meck.expect(Poison.Parser, :parse!, 1, :decoded_json)
+    :meck.expect(ExTracker.JSON, :decode!, 1, :decoded_json)
     assert process_response(%HTTPoison.Response{ status_code: 404,
                                                  headers: %{},
                                                  body: "json" }) == {404, :decoded_json}
-    assert :meck.validate(Poison.Parser)
+    assert :meck.validate(ExTracker.JSON)
   end
 
   test "process response on a non-200 response and empty body" do

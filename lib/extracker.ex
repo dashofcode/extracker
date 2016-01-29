@@ -2,8 +2,7 @@ defmodule ExTracker do
   use HTTPoison.Base
 
   alias ExTracker.Client
-  alias Poison.Parser
-  alias Poison.Encoder
+  alias ExTracker.JSON
 
   @user_agent [{"User-agent", "extracker"}]
 
@@ -11,9 +10,9 @@ defmodule ExTracker do
 
   @spec process_response(HTTPoison.Response.t) :: response
   def process_response(%HTTPoison.Response{status_code: 200, body: ""}), do: nil
-  def process_response(%HTTPoison.Response{status_code: 200, body: body}), do: Parser.parse!(body)
+  def process_response(%HTTPoison.Response{status_code: 200, body: body}), do: JSON.decode!(body)
   def process_response(%HTTPoison.Response{status_code: status_code, body: ""}), do: { status_code, nil }
-  def process_response(%HTTPoison.Response{status_code: status_code, body: body }), do: { status_code, Parser.parse!(body) }
+  def process_response(%HTTPoison.Response{status_code: status_code, body: body }), do: { status_code, JSON.decode!(body) }
 
   def delete(path, client, body \\ "") do
     _request(:delete, url(client, path), client.auth, body)
@@ -42,7 +41,7 @@ defmodule ExTracker do
   end
 
   def json_request(method, url, body \\ "", headers \\ [], options \\ []) do
-    request!(method, url, Encoder.encode(body, []), headers, options) |> process_response
+    request!(method, url, JSON.encode(body), headers, options) |> process_response
   end
 
   def raw_request(method, url, body \\ "", headers \\ [], options \\ []) do
