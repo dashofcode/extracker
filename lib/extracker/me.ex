@@ -12,8 +12,9 @@ defmodule ExTracker.Me do
 
   More info at: https://www.pivotaltracker.com/help/api/rest/v5#Me
   """
-  @spec get(Client.t) :: ExTracker.response
+  @spec get(Client.t) :: ExTracker.Record.Me.t
   def get(client) do
     get("me", client)
+    |> ExTracker.Parser.parse_me
   end
 end

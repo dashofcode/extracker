@@ -6,7 +6,7 @@ defmodule ExTracker do
 
   @user_agent [{"User-agent", "extracker"}]
 
-  @type response :: {integer, any} | Parser.t
+  @type response :: {integer, any} | Poison.Parser.t
 
   @spec process_response(HTTPoison.Response.t) :: response
   def process_response(%HTTPoison.Response{status_code: 200, body: ""}), do: nil

@@ -16,7 +16,7 @@ defmodule ExTracker.MeTest do
 
   test "get/1" do
     use_cassette "me#get" do
-      %{"username" => username} = get(@client)
+      %ExTracker.Record.Me{username: username} = get(@client)
       assert username == Helpers.pt_user_1.username
     end
   end
