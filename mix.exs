@@ -5,7 +5,7 @@ defmodule ExTracker.Mixfile do
     [
       app: :extracker,
       version: "0.0.1",
-      elixir: "~> 1.2",
+      elixir: "~> 1.1",
       elixirc_paths: elixirc_paths(Mix.env),
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
