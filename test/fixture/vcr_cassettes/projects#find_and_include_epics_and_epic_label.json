@@ -1,0 +1,40 @@
+[
+  {
+    "request": {
+      "body": "\"\"",
+      "headers": {
+        "User-agent": "extracker",
+        "X-TrackerToken": "d55c3bc1f74346b843ca84ba340b29bf"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://www.pivotaltracker.com/services/v5/projects/1027488?fields=%3Adefault%2Cepics%28%3Adefault%2Clabel%28name%29%29"
+    },
+    "response": {
+      "body": "{\"id\":1027488,\"kind\":\"project\",\"name\":\"My Sample Project\",\"version\":80,\"iteration_length\":1,\"week_start_day\":\"Monday\",\"point_scale\":\"0,1,2,3\",\"point_scale_is_custom\":false,\"bugs_and_chores_are_estimatable\":false,\"automatic_planning\":true,\"enable_tasks\":true,\"time_zone\":{\"kind\":\"time_zone\",\"olson_name\":\"America/Los_Angeles\",\"offset\":\"-08:00\"},\"velocity_averaged_over\":3,\"number_of_done_iterations_to_show\":12,\"has_google_domain\":false,\"profile_content\":\"This is a demo project, created by Tracker, with example stories for a simple shopping web site.\",\"enable_incoming_emails\":true,\"initial_velocity\":10,\"public\":false,\"atom_enabled\":false,\"project_type\":\"demo\",\"start_time\":\"2014-02-10T08:00:00Z\",\"created_at\":\"2014-03-02T07:11:04Z\",\"updated_at\":\"2014-03-02T07:11:04Z\",\"epics\":[{\"id\":1087314,\"kind\":\"epic\",\"created_at\":\"2014-03-02T07:11:07Z\",\"updated_at\":\"2014-03-02T07:11:07Z\",\"project_id\":1027488,\"name\":\"Admin Users\",\"description\":\"Get the Admin users working on the site\",\"url\":\"https://www.pivotaltracker.com/epic/show/1087314\",\"label\":{\"id\":7849080,\"name\":\"admin\"}},{\"id\":1087316,\"kind\":\"epic\",\"created_at\":\"2014-03-02T07:11:07Z\",\"updated_at\":\"2014-03-02T07:11:07Z\",\"project_id\":1027488,\"name\":\"Shoppers\",\"description\":\"Allow shoppers to use the site\",\"url\":\"https://www.pivotaltracker.com/epic/show/1087316\",\"label\":{\"id\":7849082,\"name\":\"shopping\"}}],\"account_id\":621384,\"current_iteration_number\":104,\"enable_following\":true}",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Status": "200 OK",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "Date": "Tue, 02 Feb 2016 18:39:59 GMT",
+        "X-Tracker-Project-Version": "80",
+        "X-Request-Id": "f1e5edd5b8684d43d613e37a6fcf9adb",
+        "X-UA-Compatible": "IE=Edge,chrome=1",
+        "ETag": "\"3dc041f2faf4b1c55d643cc3217ec1bc\"",
+        "X-Runtime": "0.097186",
+        "X-Rack-Cache": "miss",
+        "X-Powered-By": "Phusion Passenger Enterprise",
+        "Server": "nginx + Phusion Passenger",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": "false",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers": "X-TrackerToken,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Tracker-Warn-Unless-Project-Version-Is",
+        "X-Tracker-Client-Pinger-Interval": "12"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

@@ -64,9 +64,9 @@ defmodule ExTracker.Record.Project do
               :description, :profile_content, :enable_incoming_emails,
               :initial_velocity, :project_type, :public, :atom_enabled,
               :current_iteration_number, :current_velocity, :current_volatility,
-              :account_id, :story_ids, :epic_ids, :membership_ids, :label_ids,
-              :integration_ids, :iteration_override_numbers, :created_at,
-              :updated_at, :kind]
+              :account_id, :account, :story_ids, :epic_ids, :epics, :membership_ids,
+              :label_ids, :labels, :integration_ids, :iteration_override_numbers,
+              :created_at, :updated_at, :kind]
 
   @type t :: %ExTracker.Record.Project{
     id:                                 pos_integer,
@@ -97,14 +97,54 @@ defmodule ExTracker.Record.Project do
     current_velocity:                   non_neg_integer,
     current_volatility:                 float,
     account_id:                         pos_integer,
+    account:                            ExTracker.Record.Account.t,
     story_ids:                          [pos_integer],
     epic_ids:                           [pos_integer],
+    epics:                              [ExTracker.Record.Epic.t],
     membership_ids:                     [pos_integer],
     label_ids:                          [pos_integer],
+    labels:                             [ExTracker.Record.Label.t],
     integration_ids:                    [pos_integer],
     iteration_override_numbers:         [pos_integer],
     created_at:                         binary,
     updated_at:                         binary,
     kind:                               binary
+  }
+end
+
+defmodule ExTracker.Record.Epic do
+  defstruct [:id, :name, :description, :label_id, :label, :project_id, :url, :kind]
+
+  @type t :: %ExTracker.Record.Epic{
+    id:           pos_integer,
+    name:         binary,
+    description:  binary,
+    label_id:     pos_integer,
+    label:        ExTracker.Record.Label.t,
+    project_id:   pos_integer,
+    url:          binary,
+    kind:         binary
+  }
+end
+
+defmodule ExTracker.Record.Label do
+  defstruct [:id, :name, :project_id, :counts, :kind]
+
+  @type t :: %ExTracker.Record.Label{
+    id:           pos_integer,
+    name:         binary,
+    project_id:   pos_integer,
+    counts:       pos_integer,
+    kind:         binary
+  }
+end
+
+defmodule ExTracker.Record.Account do
+  defstruct [:id, :name, :kind]
+
+  @type t :: %ExTracker.Record.Account{
+    id:           pos_integer,
+    name:         binary,
+    kind:         binary
   }
 end

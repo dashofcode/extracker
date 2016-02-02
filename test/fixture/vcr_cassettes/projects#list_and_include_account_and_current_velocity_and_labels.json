@@ -1,0 +1,39 @@
+[
+  {
+    "request": {
+      "body": "\"\"",
+      "headers": {
+        "User-agent": "extracker",
+        "X-TrackerToken": "d55c3bc1f74346b843ca84ba340b29bf"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://www.pivotaltracker.com/services/v5/projects?fields=%3Adefault%2Caccount%2Ccurrent_velocity%2Clabels%28name%29"
+    },
+    "response": {
+      "body": "[{\"id\":1027488,\"kind\":\"project\",\"name\":\"My Sample Project\",\"version\":80,\"iteration_length\":1,\"week_start_day\":\"Monday\",\"point_scale\":\"0,1,2,3\",\"point_scale_is_custom\":false,\"bugs_and_chores_are_estimatable\":false,\"automatic_planning\":true,\"enable_tasks\":true,\"time_zone\":{\"kind\":\"time_zone\",\"olson_name\":\"America/Los_Angeles\",\"offset\":\"-08:00\"},\"velocity_averaged_over\":3,\"number_of_done_iterations_to_show\":12,\"has_google_domain\":false,\"profile_content\":\"This is a demo project, created by Tracker, with example stories for a simple shopping web site.\",\"enable_incoming_emails\":true,\"initial_velocity\":10,\"public\":false,\"atom_enabled\":false,\"project_type\":\"demo\",\"start_time\":\"2014-02-10T08:00:00Z\",\"created_at\":\"2014-03-02T07:11:04Z\",\"updated_at\":\"2014-03-02T07:11:04Z\",\"labels\":[{\"id\":12049538,\"name\":\"40e6493bda1b\"},{\"id\":12049526,\"name\":\"58c646b368d6\"},{\"id\":7849080,\"name\":\"admin\"},{\"id\":7849106,\"name\":\"blog\"},{\"id\":7849086,\"name\":\"cart\"},{\"id\":7849090,\"name\":\"checkout\"},{\"id\":7849078,\"name\":\"deployment\"},{\"id\":7849100,\"name\":\"design\"},{\"id\":7849112,\"name\":\"epic\"},{\"id\":7849104,\"name\":\"featured products\"},{\"id\":7849110,\"name\":\"ie6\"},{\"id\":11049868,\"name\":\"label1\"},{\"id\":11049870,\"name\":\"label2\"},{\"id\":7849092,\"name\":\"needs discussion\"},{\"id\":7849094,\"name\":\"orders\"},{\"id\":7849108,\"name\":\"reporting\"},{\"id\":7849088,\"name\":\"search\"},{\"id\":7849098,\"name\":\"shopper accounts\"},{\"id\":7849082,\"name\":\"shopping\"},{\"id\":7849096,\"name\":\"signup / signin\"},{\"id\":12049778,\"name\":\"super-special-label\"},{\"id\":7849084,\"name\":\"usability\"},{\"id\":7849102,\"name\":\"user generated content\"}],\"account\":{\"kind\":\"account_summary\",\"id\":621384,\"name\":\"Trackher User1\",\"status\":\"active\",\"plan\":\"Free\"},\"account_id\":621384,\"current_iteration_number\":104,\"current_velocity\":10,\"enable_following\":true}]",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Status": "200 OK",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "Date": "Tue, 02 Feb 2016 18:51:11 GMT",
+        "X-Request-Id": "b8a96783f12bb71898dcf0af4a56fa0d",
+        "X-UA-Compatible": "IE=Edge,chrome=1",
+        "ETag": "\"71cf9303412e708c67b8bc31d22c02b8\"",
+        "X-Runtime": "0.125336",
+        "X-Rack-Cache": "miss",
+        "X-Powered-By": "Phusion Passenger Enterprise",
+        "Server": "nginx + Phusion Passenger",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": "false",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers": "X-TrackerToken,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Tracker-Warn-Unless-Project-Version-Is",
+        "X-Tracker-Client-Pinger-Interval": "12"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

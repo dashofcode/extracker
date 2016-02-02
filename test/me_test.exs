@@ -7,6 +7,7 @@ defmodule ExTracker.MeTest do
   doctest ExTracker.Me
 
   alias ExTracker.Support.Helpers
+  alias ExTracker.Record.Me
 
   @client ExTracker.Client.new(%{access_token: Helpers.pt_user_1.token})
 
@@ -16,7 +17,7 @@ defmodule ExTracker.MeTest do
 
   test "get/1" do
     use_cassette "me#get" do
-      %ExTracker.Record.Me{username: username} = get(@client)
+      %Me{username: username} = get(@client)
       assert username == Helpers.pt_user_1.username
     end
   end
