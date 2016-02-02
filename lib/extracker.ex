@@ -6,7 +6,7 @@ defmodule ExTracker do
 
   @user_agent [{"User-agent", "extracker"}]
 
-  @type response :: {integer, any} | Poison.Parser.t
+  @type response :: nil | {integer, any} | Poison.Parser.t
 
   @spec process_response(HTTPoison.Response.t) :: response
   def process_response(%HTTPoison.Response{status_code: 200, body: ""}), do: nil
@@ -14,22 +14,27 @@ defmodule ExTracker do
   def process_response(%HTTPoison.Response{status_code: status_code, body: ""}), do: { status_code, nil }
   def process_response(%HTTPoison.Response{status_code: status_code, body: body }), do: { status_code, JSON.decode!(body) }
 
+  @spec delete(binary, Client.t, binary) :: response
   def delete(path, client, body \\ "") do
     _request(:delete, url(client, path), client.auth, body)
   end
 
+  @spec post(binary, Client.t, binary) :: response
   def post(path, client, body \\ "") do
     _request(:post, url(client, path), client.auth, body)
   end
 
+  @spec patch(binary, Client.t, binary) :: response
   def patch(path, client, body \\ "") do
     _request(:patch, url(client, path), client.auth, body)
   end
 
+  @spec put(binary, Client.t, binary) :: response
   def put(path, client, body \\ "") do
     _request(:put, url(client, path), client.auth, body)
   end
 
+  @spec get(binary, Client.t, [{atom, binary}] | []) :: response
   def get(path, client, params \\ []) do
     initial_url = url(client, path)
     url = add_params_to_url(initial_url, params)
@@ -41,7 +46,7 @@ defmodule ExTracker do
   end
 
   def json_request(method, url, body \\ "", headers \\ [], options \\ []) do
-    request!(method, url, JSON.encode(body), headers, options) |> process_response
+    request!(method, url, JSON.encode!(body), headers, options) |> process_response
   end
 
   def raw_request(method, url, body \\ "", headers \\ [], options \\ []) do

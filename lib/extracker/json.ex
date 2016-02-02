@@ -22,6 +22,13 @@ defmodule ExTracker.JSON do
   @doc """
   Encode elixir objects in json string.
   """
+  def encode!(json) do
+    Poison.encode!(json)
+  end
+
+  @doc """
+  Encode elixir objects in json string.
+  """
   def encode(json) do
     Poison.encode(json)
   end
