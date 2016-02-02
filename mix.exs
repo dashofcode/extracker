@@ -51,7 +51,7 @@ defmodule ExTracker.Mixfile do
       {:poison, "~> 2.0"},
       {:earmark, "~> 0.1", only: :docs},
       {:ex_doc, "~> 0.11", only: :docs},
-      {:inch_ex, only: :docs},
+      {:inch_ex, ">= 0.0.0", only: :docs},
       {:excoveralls, "~> 0.4", only: :test},
       {:exvcr, "~> 0.6", only: :test},
       {:meck, "~> 0.8", only: :test }
