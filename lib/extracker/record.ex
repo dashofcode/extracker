@@ -148,3 +148,72 @@ defmodule ExTracker.Record.Account do
     kind:         binary
   }
 end
+
+defmodule ExTracker.Record.Story do
+  defstruct [:id, :project_id, :name, :description, :story_type, :current_state,
+              :estimate, :accepted_at, :deadline, :requested_by_id, :owner_ids,
+              :label_ids, :task_ids, :follower_ids, :comment_ids, :created_at, :updated_at,
+              :before_id, :after_id, :integration_id, :external_id, :url, :transitions,
+              :cycle_time_details, :kind]
+
+  @type t :: %__MODULE__{
+    id:                 pos_integer,
+    project_id:         pos_integer,
+    name:               binary,
+    description:        binary,
+    story_type:         binary,
+    current_state:      binary,
+    estimate:           float,
+    accepted_at:        binary,
+    deadline:           binary,
+    requested_by_id:    pos_integer,
+    owner_ids:          [pos_integer],
+    label_ids:          [pos_integer],
+    task_ids:           [pos_integer],
+    follower_ids:       [pos_integer],
+    comment_ids:        [pos_integer],
+    created_at:         binary,
+    updated_at:         binary,
+    before_id:          pos_integer,
+    after_id:           pos_integer,
+    integration_id:     pos_integer,
+    external_id:        binary,
+    url:                binary,
+    transitions:        [ExTracker.Record.StoryTransition.t],
+    cycle_time_details: ExTracker.Record.CycleTimeDetails.t,
+    kind:               binary
+  }
+end
+
+defmodule ExTracker.Record.StoryTransition do
+  defstruct [:state, :story_id, :project_id, :project_version, :occurred_at, :performed_by_id, :kind]
+
+  @type t :: %__MODULE__{
+    state:           binary,
+    story_id:        pos_integer,
+    project_id:      pos_integer,
+    project_version: pos_integer,
+    occurred_at:     binary,
+    performed_by_id: pos_integer,
+    kind:            binary
+  }
+end
+
+defmodule  ExTracker.Record.CycleTimeDetails do
+  defstruct [:total_cycle_time, :started_time, :started_count, :finished_time,
+              :finished_count, :delivered_time, :delivered_count, :rejected_time,
+              :rejected_count, :story_id, :kind]
+
+  @type t :: %__MODULE__{
+    total_cycle_time:   pos_integer,
+    started_time:       pos_integer,
+    started_count:      pos_integer,
+    finished_time:      pos_integer,
+    finished_count:     pos_integer,
+    delivered_time:     pos_integer,
+    delivered_count:    pos_integer,
+    rejected_time:      pos_integer,
+    rejected_count:     pos_integer,
+    kind:               binary
+  }
+end
