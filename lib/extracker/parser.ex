@@ -117,4 +117,49 @@ defmodule ExTracker.Parser do
   def parse_label(object) do
     struct(ExTracker.Record.Label, object)
   end
+
+  @doc """
+  Parse stories from the API response json.
+  """
+  @spec parse_stories([Map.t] | nil) :: [ExTracker.Record.Story.t] | nil
+  def parse_stories(nil), do: nil
+  def parse_stories(object) do
+    object |> Enum.map(&ExTracker.Parser.parse_story/1)
+    %{ object | story_transactions: parse_story_transactions(object.story_transactions),
+                cicle_time_details:  parse_cicle_time_details(object.cicle_time_details)
+    }
+  end
+
+  @doc """
+  Parse story from the API response json.
+  """
+  @spec parse_story(Map.t) :: ExTracker.Record.Story.t
+  def parse_story(object) do
+    struct(ExTracker.Record.Story, object)
+  end
+
+  @doc """
+  Parse story transactions from the API response json.
+  """
+  @spec parse_story_transactions([Map.t] | nil) :: [ExTracker.Record.StoryTransaction.t] | nil
+  def parse_story_transactions(nil), do: nil
+  def parse_story_transactions(object) do
+    object |> Enum.map(&ExTracker.Parser.parse_story_transaction/1)
+  end
+
+  @doc """
+  Parse story transactions from the API response json.
+  """
+  @spec parse_story_transaction(Map.t) :: ExTracker.Record.StoryTransaction.t
+  def parse_story_transaction(object) do
+    struct(ExTracker.Record.StoryTransaction, object)
+  end
+
+  @doc """
+  Parse cicle time details from the API response json.
+  """
+  @spec parse_cicle_time_details(Map.t) :: ExTracker.Record.CicleTimeDetails.t
+  def parse_cicle_time_details(object) do
+    struct(ExTracker.Record.CicleTimeDetails, object)
+  end
 end

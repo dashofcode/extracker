@@ -156,7 +156,7 @@ defmodule ExTracker.Record.Story do
               :before_id, :after_id, :integration_id, :external_id, :url, :transitions,
               :cycle_time_details, :kind]
 
-  @type t :: %__MODULE__{
+  @type t :: %ExTracker.Record.Story{
     id:                 pos_integer,
     project_id:         pos_integer,
     name:               binary,
@@ -188,7 +188,7 @@ end
 defmodule ExTracker.Record.StoryTransition do
   defstruct [:state, :story_id, :project_id, :project_version, :occurred_at, :performed_by_id, :kind]
 
-  @type t :: %__MODULE__{
+  @type t :: %ExTracker.Record.StoryTransition{
     state:           binary,
     story_id:        pos_integer,
     project_id:      pos_integer,
@@ -204,7 +204,7 @@ defmodule  ExTracker.Record.CycleTimeDetails do
               :finished_count, :delivered_time, :delivered_count, :rejected_time,
               :rejected_count, :story_id, :kind]
 
-  @type t :: %__MODULE__{
+  @type t :: %ExTracker.Record.CycleTimeDetails{
     total_cycle_time:   pos_integer,
     started_time:       pos_integer,
     started_count:      pos_integer,
