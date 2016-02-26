@@ -125,9 +125,6 @@ defmodule ExTracker.Parser do
   def parse_stories(nil), do: nil
   def parse_stories(object) do
     object |> Enum.map(&ExTracker.Parser.parse_story/1)
-    %{ object | story_transactions: parse_story_transactions(object.story_transactions),
-                cicle_time_details:  parse_cicle_time_details(object.cicle_time_details)
-    }
   end
 
   @doc """

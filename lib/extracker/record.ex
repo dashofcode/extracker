@@ -179,8 +179,8 @@ defmodule ExTracker.Record.Story do
     integration_id:     pos_integer,
     external_id:        binary,
     url:                binary,
-    transitions:        [ExTracker.Record.StoryTransition.t],
-    cycle_time_details: ExTracker.Record.CycleTimeDetails.t,
+    # transitions:        [ExTracker.Record.StoryTransition.t],
+    # cycle_time_details: ExTracker.Record.CycleTimeDetails.t,
     kind:               binary
   }
 end
