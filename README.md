@@ -42,7 +42,8 @@ Based heavily on the [Tentacat](https://github.com/edgurgel/tentacat) and [ExTwi
 * [ ] Request Aggregator
 * [ ] Search
 * [ ] Source Commits
-* [ ] Stories
+* [x] Stories
+  * [x] Get
 * [ ] Story
 * [ ] Story Tasks
 * [ ] Story Transitions
