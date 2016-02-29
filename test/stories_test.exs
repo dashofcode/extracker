@@ -7,12 +7,21 @@ defmodule ExTracker.StoriesTest do
   doctest ExTracker.Stories
 
   alias ExTracker.Support.Helpers
+  alias ExTracker.Record.Story
 
   @client ExTracker.Client.new(%{access_token: Helpers.pt_user_1.token})
   @project_id Helpers.pt_user_1.project_id
+  @story_id Helpers.pt_user_1.story_id
 
   setup_all do
     HTTPoison.start
+  end
+
+  test "find/3" do
+    use_cassette "stories#find" do
+      %Story{name: name} = find(@project_id, @story_id, @client)
+      assert name == "Setup development environment"
+    end
   end
 
   test "list/2" do
