@@ -1,7 +1,7 @@
 defmodule ExTracker.Support.Helpers do
   # These API Tokens are for a user with just one Public Sample Project
   def pt_user_1 do
-    %{ username: "trackerapi1", password: "trackerapi1", token: "d55c3bc1f74346b843ca84ba340b29bf", project_id: 1027488 }
+    %{ username: "trackerapi1", password: "trackerapi1", token: "d55c3bc1f74346b843ca84ba340b29bf", project_id: 1027488, story_id: 66727974 }
   end
 
   def pt_user_2 do
