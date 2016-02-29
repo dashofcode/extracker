@@ -42,8 +42,13 @@ Based heavily on the [Tentacat](https://github.com/edgurgel/tentacat) and [ExTwi
 * [ ] Request Aggregator
 * [ ] Search
 * [ ] Source Commits
-* [ ] Stories
-* [ ] Story
+* [x] Stories
+  * [x] Get
+  * [ ] Post
+* [x] Story
+  * [x] Get
+  * [ ] Put
+  * [ ] Delete
 * [ ] Story Tasks
 * [ ] Story Transitions
 * [ ] Workspaces
