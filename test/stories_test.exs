@@ -17,9 +17,9 @@ defmodule ExTracker.StoriesTest do
     HTTPoison.start
   end
 
-  test "find/3" do
+  test "find/2" do
     use_cassette "stories#find" do
-      %Story{name: name} = find(@project_id, @story_id, @client)
+      %Story{name: name} = find(@story_id, @client)
       assert name == "Setup development environment"
     end
   end

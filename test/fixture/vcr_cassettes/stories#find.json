@@ -9,7 +9,7 @@
       "method": "get",
       "options": [],
       "request_body": "",
-      "url": "https://www.pivotaltracker.com/services/v5/projects/1027488/stories/66727974"
+      "url": "https://www.pivotaltracker.com/services/v5/stories/66727974"
     },
     "response": {
       "body": "{\"kind\":\"story\",\"id\":66727974,\"created_at\":\"2014-02-10T00:00:00Z\",\"updated_at\":\"2014-03-02T07:11:04Z\",\"accepted_at\":\"2014-02-11T00:00:00Z\",\"story_type\":\"chore\",\"name\":\"Setup development environment\",\"description\":\"We need 2 machines set up\",\"current_state\":\"accepted\",\"requested_by_id\":1266314,\"url\":\"https://www.pivotaltracker.com/story/show/66727974\",\"project_id\":1027488,\"owner_ids\":[],\"labels\":[]}",
@@ -18,12 +18,12 @@
         "Transfer-Encoding": "chunked",
         "Status": "200 OK",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "Date": "Mon, 29 Feb 2016 08:40:24 GMT",
+        "Date": "Tue, 01 Mar 2016 06:04:50 GMT",
         "X-Tracker-Project-Version": "120",
-        "X-Request-Id": "cd4b9d80941914b8b42b04d565766489",
+        "X-Request-Id": "75bae1844699644e82d9257ef0a3a29f",
         "X-UA-Compatible": "IE=Edge,chrome=1",
         "ETag": "\"cb76acb351c88232bdc0a95c1ab73bc9\"",
-        "X-Runtime": "0.052720",
+        "X-Runtime": "0.056699",
         "X-Rack-Cache": "miss",
         "X-Powered-By": "Phusion Passenger Enterprise",
         "Server": "nginx + Phusion Passenger",
