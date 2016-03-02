@@ -19,7 +19,7 @@ defmodule ExTracker.StoriesTest do
 
   test "find/2" do
     use_cassette "stories#find" do
-      %Story{name: name} = find(@story_id, @client)
+      %Story{name: name} = find(@client, @story_id)
       assert name == "Setup development environment"
     end
   end

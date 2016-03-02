@@ -7,12 +7,12 @@ defmodule ExTracker.Stories do
 
   ## Example
 
-      ExTracker.Stories.find("12345", "67890", client)
+      ExTracker.Stories.find(client, "12345")
 
   More info at: https://www.pivotaltracker.com/help/api/rest/v5#stories_story_id_get
   """
-  @spec find(pos_integer, Client.t, [{atom, binary}] | []) :: ExTracker.Record.Story.t
-  def find(story_id, client, params \\ []) do
+  @spec find(Client.t, pos_integer, [{atom, binary}] | []) :: ExTracker.Record.Story.t
+  def find(client, story_id, params \\ []) do
     get("stories/#{story_id}", client, params)
     |> ExTracker.Parser.parse_story
   end

@@ -7,12 +7,12 @@ defmodule ExTracker.Projects do
 
   ## Example
 
-      ExTracker.Projects.find("12345", client)
+      ExTracker.Projects.find(client, "12345")
 
   More info at: https://www.pivotaltracker.com/help/api/rest/v5#Project
   """
-  @spec find(pos_integer, Client.t, [{atom, binary}] | []) :: ExTracker.Record.Project.t
-  def find(project_id, client, params \\ []) do
+  @spec find(Client.t, pos_integer, [{atom, binary}] | []) :: ExTracker.Record.Project.t
+  def find(client, project_id, params \\ []) do
     get("projects/#{project_id}", client, params)
     |> ExTracker.Parser.parse_project
   end
