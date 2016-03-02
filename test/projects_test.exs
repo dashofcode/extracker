@@ -21,7 +21,7 @@ defmodule ExTracker.ProjectsTest do
 
   test "find/3" do
     use_cassette "projects#find" do
-      %Project{name: name, week_start_day: week_start_day} = find(@project_id, @client)
+      %Project{name: name, week_start_day: week_start_day} = find(@client, @project_id)
       assert name == "My Sample Project"
       assert week_start_day == "Monday"
     end
@@ -30,7 +30,7 @@ defmodule ExTracker.ProjectsTest do
   test "find/3 with fields param" do
     use_cassette "projects#find and include epics and epic label" do
       %Project{name: name, epics: epics} =
-          find( @project_id, @client,
+          find(@client, @project_id,
                 fields: ":default,epics(:default,label(name))")
       assert name == "My Sample Project"
       assert length(epics) > 1
