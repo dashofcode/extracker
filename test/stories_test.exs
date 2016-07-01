@@ -30,4 +30,11 @@ defmodule ExTracker.StoriesTest do
       assert length(stories) == 63
     end
   end
+
+  test "update/3" do
+    use_cassette "stories#update" do
+      %Story{name: name} = update(@client, @story_id, %{name: "Name From Test"})
+      assert name == "Name From Test"
+    end
+  end
 end
