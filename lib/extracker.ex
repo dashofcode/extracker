@@ -42,7 +42,10 @@ defmodule ExTracker do
   end
 
   def _request(method, url, auth, body \\ "") do
-    json_request(method, url, body, authorization_header(auth, @user_agent))
+    json_request(
+      method, url, body,
+      ["Content-Type": "application/json"] ++ authorization_header(auth, @user_agent)
+    )
   end
 
   def json_request(method, url, body \\ "", headers \\ [], options \\ []) do
