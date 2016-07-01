@@ -47,7 +47,7 @@ Based heavily on the [Tentacat](https://github.com/edgurgel/tentacat) and [ExTwi
   * [ ] Post
 * [x] Story
   * [x] Get
-  * [ ] Put
+  * [x] Put
   * [ ] Delete
 * [ ] Story Tasks
 * [ ] Story Transitions
