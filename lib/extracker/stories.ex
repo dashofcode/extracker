@@ -26,7 +26,7 @@ defmodule ExTracker.Stories do
 
   More info at: https://www.pivotaltracker.com/help/api/rest/v5#projects_project_id_stories_story_id_put
   """
-  @spec find(Client.t, pos_integer, {atom, binary}) :: ExTracker.Record.Story.t
+  @spec update(Client.t, pos_integer, {atom, binary}) :: ExTracker.Record.Story.t
   def update(client, story_id, params) do
     put("stories/#{story_id}", client, params)
     |> ExTracker.Parser.parse_story
