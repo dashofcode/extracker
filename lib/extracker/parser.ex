@@ -128,6 +128,14 @@ defmodule ExTracker.Parser do
   end
 
   @doc """
+  Parse comment from the API response json.
+  """
+  @spec parse_comment(Map.t) :: ExTracker.Record.Comment.t
+  def parse_comment(object) do
+    struct(ExTracker.Record.Comment, object)
+  end
+
+  @doc """
   Parse story from the API response json.
   """
   @spec parse_story(Map.t) :: ExTracker.Record.Story.t
