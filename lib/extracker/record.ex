@@ -149,6 +149,20 @@ defmodule ExTracker.Record.Account do
   }
 end
 
+defmodule ExTracker.Record.Comment do
+  defstruct [:id, :created_at, :kind, :person_id, :story_id, :text, :updated_at]
+
+  @type t :: %ExTracker.Record.Comment{
+    id:         pos_integer,
+    created_at: binary,
+    kind:       binary,
+    person_id:  pos_integer,
+    story_id:   pos_integer,
+    text:       binary,
+    updated_at: binary
+  }
+end
+
 defmodule ExTracker.Record.Story do
   defstruct [:id, :project_id, :name, :description, :story_type, :current_state,
               :estimate, :accepted_at, :deadline, :requested_by_id, :owner_ids,

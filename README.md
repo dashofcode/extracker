@@ -17,7 +17,11 @@ Based heavily on the [Tentacat](https://github.com/edgurgel/tentacat) and [ExTwi
 * [ ] Accounts
 * [ ] Activity
 * [ ] Attachments
-* [ ] Comments
+* [x] Comments
+  * [ ] Get
+  * [ ] Put
+  * [x] Post
+  * [ ] Delete
 * [ ] Epic
 * [ ] Epics
 * [ ] Exports
