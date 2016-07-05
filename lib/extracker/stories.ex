@@ -17,6 +17,20 @@ defmodule ExTracker.Stories do
     |> ExTracker.Parser.parse_story
   end
 
+  @doc """
+  Update a single `story`
+
+  ## Example
+
+      ExTracker.Stories.update(client, "124273751", %{name: "New Cool Name"})
+
+  More info at: https://www.pivotaltracker.com/help/api/rest/v5#projects_project_id_stories_story_id_put
+  """
+  @spec update(Client.t, pos_integer, {atom, binary}) :: ExTracker.Record.Story.t
+  def update(client, story_id, params) do
+    put("stories/#{story_id}", client, params)
+    |> ExTracker.Parser.parse_story
+  end
 
   @doc """
   Get all stories from project
